@@ -2,9 +2,9 @@ db:
   type: mysql
 
 rails:
-  approot: magical
+  approot: backend
   type: ruby
 
 worker:
-  approot: magical
+  approot: backend
   type: ruby-worker
