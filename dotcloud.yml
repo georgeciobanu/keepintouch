@@ -1,0 +1,10 @@
+db:
+  type: mysql
+
+rails:
+  approot: magical
+  type: ruby
+
+worker:
+  approot: magical
+  type: ruby-worker
