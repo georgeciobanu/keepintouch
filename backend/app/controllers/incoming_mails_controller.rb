@@ -14,7 +14,7 @@ class IncomingMailsController < ApplicationController
 
      # Do some other stuff with the mail message
      @user = User.find_or_create_by_email(params[:from])     
-     @contact = Contact.create email: params[:x_cc_header]
+     @contact = @user.contacts.create email: params[:x_cc_header]
      @mj = MailJob.new @contact.id
      # get the data from the 'To' field
      
