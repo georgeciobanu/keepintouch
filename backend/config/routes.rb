@@ -4,7 +4,7 @@ Backend::Application.routes.draw do
   # resources :users
   
   
-  match 'remind' => 'users#remind', :via => :post
+  match 'incoming_mails' => 'incoming_mails#create', :via => :post
   
   
   # The priority is based upon order of creation:

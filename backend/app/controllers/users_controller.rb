@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find_or_create_by_email(params[:email])
     Rails.logger.info params
     
+    
     render :json => true
   end
 
