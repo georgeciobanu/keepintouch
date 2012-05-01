@@ -3,18 +3,18 @@ class IncomingMailsController < ApplicationController
 
    def create
      Rails.logger.info "This works"
-     Rails.logger.info params
-     Rails.logger.info params[:headers][:subject]
-     Rails.logger.info params[:headers][:to]
+     Rails.logger.info params[:x_cc_header]
+     # Rails.logger.info params[:headers][:subject]
+     # Rails.logger.info params[:headers][:to]
      
      # Does CC even exist?
-     Rails.logger.info params[:headers][:cc]
-     Rails.logger.info params[:plain]
-     Rails.logger.info params[:html]
+     # Rails.logger.info params[:headers][:cc]
+     # Rails.logger.info params[:plain]
+     # Rails.logger.info params[:html]
 
      # Do some other stuff with the mail message
-     @user = User.find_or_create_by_email(params[:envelope][:from])     
-     @contact = Contact.create email: params[:headers][:to]
+     @user = User.find_or_create_by_email(params[:from])     
+     @contact = Contact.create email: params[:x_cc_header]
      @mj = MailJob.new @contact.id
      # get the data from the 'To' field
      Rails.logger.info params[:headers][:to]
