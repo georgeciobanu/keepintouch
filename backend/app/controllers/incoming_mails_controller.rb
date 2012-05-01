@@ -17,7 +17,6 @@ class IncomingMailsController < ApplicationController
      @contact = Contact.create email: params[:x_cc_header]
      @mj = MailJob.new @contact.id
      # get the data from the 'To' field
-     Rails.logger.info params[:headers][:to]
      
      # for now just assume 10s
      @dj = Delayed::Job.enqueue @mj, :priority => 0,  :run_at => 10.seconds.from_now
