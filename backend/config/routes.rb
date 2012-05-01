@@ -1,8 +1,12 @@
 Backend::Application.routes.draw do
-  resources :contacts
-
-  resources :users
-
+  # resources :contacts
+  # 
+  # resources :users
+  
+  
+  match 'remind' => 'users#remind', :via => :post
+  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

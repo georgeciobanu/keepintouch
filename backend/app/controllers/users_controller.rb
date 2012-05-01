@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+  # POST /remind
+  def remind
+    @user = User.find_or_create_by_email(params[:email])
+    Rails.logger.info params
+    
+    render :json => true
+  end
+
+
   # GET /users
   # GET /users.json
   def index
