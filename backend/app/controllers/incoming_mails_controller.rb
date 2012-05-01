@@ -6,7 +6,7 @@ class IncomingMailsController < ApplicationController
      Rails.logger.info params[:x_cc_header]
      # Rails.logger.info params[:headers][:subject]
      # Rails.logger.info params[:headers][:to]
-     
+
      # Does CC even exist?
      # Rails.logger.info params[:headers][:cc]
      # Rails.logger.info params[:plain]
