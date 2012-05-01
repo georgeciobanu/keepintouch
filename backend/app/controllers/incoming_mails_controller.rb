@@ -2,6 +2,8 @@ class IncomingMailsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
    def create
+     Rails.logger.info "This works"
+     Rails.logger.info params
      Rails.logger.info params[:headers][:subject]
      Rails.logger.info params[:headers][:to]
      
